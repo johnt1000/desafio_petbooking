@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_165718) do
+ActiveRecord::Schema.define(version: 2019_11_19_184648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2019_11_19_165718) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "medical_records", force: :cascade do |t|
+    t.text "symptoms"
+    t.text "treatment"
+    t.bigint "pet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_medical_records_on_pet_id"
+  end
+
   create_table "pets", force: :cascade do |t|
     t.string "name", null: false
     t.string "date_of_birth"
@@ -38,4 +47,5 @@ ActiveRecord::Schema.define(version: 2019_11_19_165718) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "medical_records", "pets"
 end

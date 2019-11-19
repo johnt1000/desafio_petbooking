@@ -22,7 +22,7 @@ RSpec.describe Pet, type: :model do
   describe '#name' do
     it 'validates presence' do
       pet.name = nil
-      pet.valid?
+      expect(pet).to_not be_valid
       expect(pet.errors[:name]).to eq ["can't be blank"]
     end
   end
