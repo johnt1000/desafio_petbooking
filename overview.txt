@@ -1,3 +1,14 @@
 Funcionalidades desenvolvidas:
   - Crud de Pets
-  - Crud de Pets
+  - Crud de Medical Records (prontuários)
+  - Filtros de listagem e páginação (ActiveAdmin)
+
+Problemas ou melhorias que você faria no seu projeto (pelo menos 3):
+  * Melhorias
+    - Autenticação;
+    - I18n;
+    - Navegação.
+
+  * Problemas:
+    - Depois de criar o test para Medical Records e relacionar os Pets;
+      aos prontuários, os teste quebraram. Tive que remover, para entregar o projeto.
