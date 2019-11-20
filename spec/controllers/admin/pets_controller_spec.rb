@@ -76,7 +76,7 @@ RSpec.describe Admin::PetsController, type: :controller do
       end
 
       it 'should create the pet' do
-        post :create, params: { person: valid_attributes }
+        post :create, params: { pet: valid_attributes }
         pet = Pet.last
 
         expect(pet.name).to eq(valid_attributes[:name])

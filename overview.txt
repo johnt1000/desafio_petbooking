@@ -1,0 +1,3 @@
+Funcionalidades desenvolvidas:
+  - Crud de Pets
+  - Crud de Pets

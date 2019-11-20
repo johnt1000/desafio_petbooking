@@ -1,19 +1,5 @@
 ActiveAdmin.register Pet do
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :name, :date_of_birth, :race, :pet_type
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:name, :date_of_birth, :race, :pet_type]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
   permit_params :name, :date_of_birth, :race, :pet_type
   
   filter :name
@@ -27,7 +13,10 @@ ActiveAdmin.register Pet do
     column :date_of_birth
     column :race
     column :pet_type
-    actions
+    # actions
+    actions dropdown: true do |pet|
+      item "Medical Records", admin_pet_medical_records_path(pet)
+    end
   end
 
   show do
